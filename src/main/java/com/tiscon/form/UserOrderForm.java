@@ -47,19 +47,19 @@ public class UserOrderForm {
 
     @Numeric
     @NotBlank
-    private String box;
+    private String box = "0";
 
     @Numeric
     @NotBlank
-    private String bed;
+    private String bed = "0";
 
     @Numeric
     @NotBlank
-    private String bicycle;
+    private String bicycle = "0";
 
     @Numeric
     @NotBlank
-    private String washingMachine;
+    private String washingMachine = "0";
 
     @NotNull
     private boolean washingMachineInstallation;
