@@ -26,7 +26,6 @@ public class EstimateService {
     private static final int PRICE_PER_DISTANCE = 100;
 
     /** 引越し月に対する料金　*/
-    private int movingMonth;
     private double N;
 
     private final EstimateDao estimateDAO;
@@ -80,6 +79,8 @@ public class EstimateService {
 
         // 距離当たりの料金を算出する
         int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
+
+        int movingMonth = dto.getMovingMonth();
 
         // 引越月係数
         if(movingMonth==3||movingMonth==4){N=1.5;}

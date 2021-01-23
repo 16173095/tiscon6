@@ -28,8 +28,8 @@ public class UserOrderDto {
 
     private boolean washingMachineInstallation;
 
-    public String getMovingMonth() {
-        return movingMonth;
+    public int getMovingMonth() {
+        return Integer.parseInt(movingMonth);
     }
 
     public void setMovingMonth(String movingMonth) {
