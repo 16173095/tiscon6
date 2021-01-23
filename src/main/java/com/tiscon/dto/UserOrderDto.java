@@ -2,6 +2,8 @@ package com.tiscon.dto;
 
 public class UserOrderDto {
 
+    private String movingMonth;
+
     private String customerName;
 
     private String tel;
@@ -25,6 +27,14 @@ public class UserOrderDto {
     private String washingMachine;
 
     private boolean washingMachineInstallation;
+
+    public String getMovingMonth() {
+        return movingMonth;
+    }
+
+    public void setMovingMonth(String movingMonth) {
+        this.movingMonth = movingMonth;
+    }
 
     public String getCustomerName() {
         return customerName;

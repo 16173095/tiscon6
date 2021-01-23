@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Customer implements Serializable {
 
+    private String movingMonth;
+
     private Integer customerId;
 
     private String oldPrefectureId;
@@ -19,6 +21,14 @@ public class Customer implements Serializable {
     private String oldAddress;
 
     private String newAddress;
+
+    public String getMovingMonth() {
+        return movingMonth;
+    }
+
+    public void setMovingMonth(String movingMonth) {
+        this.movingMonth = movingMonth;
+    }
 
     public int getCustomerId() {
         return customerId;

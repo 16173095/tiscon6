@@ -25,6 +25,11 @@
         <col span="2" style="background-color: #FFFFFF;">
         <tbody>
         <tr>
+          <th style="width: 40%">引越し月</th>
+          <td><span th:text="*{movingMonth}"></span></td>
+          <input type="hidden" name="movingMonth" id="movingMonth" th:value="*{movingMonth}"/>
+        </tr>
+        <tr>
           <th style="width: 40%">氏名</th>
           <td><span th:text="*{customerName}"></span></td>
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>

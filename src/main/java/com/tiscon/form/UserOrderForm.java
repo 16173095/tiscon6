@@ -14,6 +14,9 @@ import javax.validation.constraints.NotNull;
 public class UserOrderForm {
 
     @NotBlank
+    private String movingMonth;
+
+    @NotBlank
     private String customerName;
 
     @NotBlank
@@ -54,6 +57,14 @@ public class UserOrderForm {
 
     @NotNull
     private boolean washingMachineInstallation;
+
+    public String getMovingMonth() {
+        return movingMonth;
+    }
+
+    public void setMovingMonth(String movingMonth) {
+        this.movingMonth = movingMonth;
+    }
 
     public String getCustomerName() {
         return customerName;
