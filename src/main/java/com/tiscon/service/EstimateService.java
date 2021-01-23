@@ -25,6 +25,10 @@ public class EstimateService {
     /** 引越しする距離の1 kmあたりの料金[円] */
     private static final int PRICE_PER_DISTANCE = 100;
 
+    /** 引越し月に対する料金　*/
+    private int movingMonth;
+    private double N;
+
     private final EstimateDao estimateDAO;
 
     /**
@@ -77,6 +81,11 @@ public class EstimateService {
         // 距離当たりの料金を算出する
         int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
 
+        // 引越月係数
+        if(movingMonth==3||movingMonth==4){N=1.5;}
+        else if(movingMonth==9){N=1.2;}
+        else{N=1.0;}
+
         int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX)
                 + getBoxForPackage(dto.getBed(), PackageType.BED)
                 + getBoxForPackage(dto.getBicycle(), PackageType.BICYCLE)
@@ -92,7 +101,11 @@ public class EstimateService {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
 
-        return priceForDistance + pricePerTruck + priceForOptionalService;
+        //引越見積もり計算
+        double pricemove =(priceForDistance + pricePerTruck)*N + priceForOptionalService;
+        //小数点以下切り捨て
+        int realpricemove=(int)pricemove;
+        return realpricemove;
     }
 
     /**
