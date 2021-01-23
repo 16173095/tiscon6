@@ -28,10 +28,16 @@ public class UserOrderForm {
     private String email;
 
     @NotBlank
+    private String oldZip;
+
+    @NotBlank
     private String oldPrefectureId;
 
     @NotBlank
     private String oldAddress;
+
+    @NotBlank
+    private String newZip;
 
     @NotBlank
     private String newPrefectureId;
@@ -90,6 +96,14 @@ public class UserOrderForm {
         this.email = email;
     }
 
+    public String getOldZip() {
+        return oldZip;
+    }
+
+    public void setOldZip(String oldZip) {
+        this.oldZip = oldZip;
+    }
+
     public String getOldPrefectureId() {
         return oldPrefectureId;
     }
@@ -104,6 +118,14 @@ public class UserOrderForm {
 
     public void setOldAddress(String oldAddress) {
         this.oldAddress = oldAddress;
+    }
+
+    public String getNewZip() {
+        return newZip;
+    }
+
+    public void setNewZip(String newZip) {
+        this.newZip = newZip;
     }
 
     public String getNewPrefectureId() {

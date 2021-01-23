@@ -12,6 +12,10 @@ public class Customer implements Serializable {
 
     private String newPrefectureId;
 
+    private String oldZip;
+
+    private String newZip;
+
     private String customerName;
 
     private String tel;
@@ -52,6 +56,22 @@ public class Customer implements Serializable {
 
     public void setNewPrefectureId(String newPrefectureId) {
         this.newPrefectureId = newPrefectureId;
+    }
+
+    public String getOldZip() {
+        return oldZip;
+    }
+
+    public void setOldZip(String oldZip) {
+        this.oldZip = oldZip;
+    }
+
+    public String getNewZip() {
+        return newZip;
+    }
+
+    public void setNewZip(String newZip) {
+        this.newZip = newZip;
     }
 
     public String getCustomerName() {

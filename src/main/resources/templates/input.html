@@ -32,49 +32,30 @@
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL（ハイフンなし）</label>
-          <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" maxlength="11" minlength="10"placeholder="0312345678"/>
+          <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" maxlength="11" minlength="10" placeholder="0312345678"/>
         </div>
         <div class="form-group">
           <label for="email">連絡先メールアドレス</label>
           <input type="email" id="email" name="email" th:field="*{email}" class="form-control" placeholder="test@test.com"/>
         </div>
-        ここから書き足した部分
         <div class="form-group">
           <label >転居元郵便番号</label>
-          <input type="text" name="old_zip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','old_pref01','old_addr01');">
+          <input type="text" id="oldZip" name="oldZip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','oldPrefectureId','oldAddress');">
         </div>
-        <div class="form-group">
-          <label>転居元住所（都道府県）</label>
-          <input type="text" name="old_pref01" class="form-control" readonly>
-        </div>
-        <div class="form-group">
-          <label for="oldAddress">転居元住所（市区町村以下）</label>
-          <input type="text" id="oldAddress" name="old_addr01" th:field="*{oldAddress}"
-                 class="form-control">
-        </div>
-        <div class="form-group">
-          <label >転居先郵便番号</label>
-          <input type="text" name="new_zip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','new_pref01','new_addr01');">
-        </div>
-        <div class="form-group">
-          <label>転居先住所（都道府県）</label>
-          <input type="text" name="new_pref01" class="form-control" readonly>
-        </div>
-        <div class="form-group">
-          <label for="newAddress">転居先住所（市区町村以下）</label>
-          <input type="text" id="newAddress" name="new_addr01" th:field="*{newAddress}" class="form-control">
-        </div>
-        書き足した部分おわり
         <div class="form-group">
           <label for="oldPrefectureId">転居元住所（都道府県）</label>
-          <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
+          <select type="text" id="oldPrefectureId" name="oldPrefectureId" class="form-control">
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
         <div class="form-group">
           <label for="oldAddress">転居元住所（市区町村以下）</label>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
-                 class="form-control" placeholder="新宿区西新宿1-1-1"/>
+                 class="form-control">
+        </div>
+        <div class="form-group">
+          <label >転居先郵便番号</label>
+          <input type="text" id="newZip" name="newZip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','newPrefectureId','newAddress');">
         </div>
         <div class="form-group">
           <label for="newPrefectureId">転居先住所（都道府県）</label>

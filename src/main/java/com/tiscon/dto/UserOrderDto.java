@@ -10,9 +10,13 @@ public class UserOrderDto {
 
     private String email;
 
+    private String oldZip;
+
     private String oldPrefectureId;
 
     private String oldAddress;
+
+    private String newZip;
 
     private String newPrefectureId;
 
@@ -90,6 +94,22 @@ public class UserOrderDto {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public String getOldZip() {
+        return oldZip;
+    }
+
+    public void setOldZip(String oldZip) {
+        this.oldZip = oldZip;
+    }
+
+    public String getNewZip() {
+        return newZip;
+    }
+
+    public void setNewZip(String newZip) {
+        this.newZip = newZip;
     }
 
     public int getBox() {
