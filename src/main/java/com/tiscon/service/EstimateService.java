@@ -80,7 +80,7 @@ public class EstimateService {
         // 距離当たりの料金を算出する
         int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
 
-        int movingMonth = dto.getMovingMonth();
+        int movingMonth = Integer.parseInt(dto.getMovingMonth());
 
         // 引越月係数
         if(movingMonth==3||movingMonth==4){N=1.5;}

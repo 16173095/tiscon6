@@ -21,7 +21,7 @@
         <legend>個人情報</legend>
         <div class="form-group">
           <label for="customerName">引越し月（※数値のみ入力）</label>
-          <input type="text" id="movingMonth" name="movingMonth" th:field="*{movingMonth}" class="form-control" value="1月"/>
+          <input type="text" id="movingMonth" name="movingMonth" th:field="*{movingMonth}" class="form-control" placeholder="1"/>
         </div>
         <div class="form-group">
           <label for="customerName">氏名</label>
@@ -36,8 +36,9 @@
           <input type="email" id="email" name="email" th:field="*{email}" class="form-control" placeholder="test@test.com"/>
         </div>
         <div class="form-group">
-          <label >転居元郵便番号</label>
-          <input type="text" id="oldZip" name="oldZip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','oldPrefectureId','oldAddress');">
+          <label >転居元郵便番号（ハイフンなし）</label>
+          <input type="text" id="oldZip" name="oldZip" class="form-control" maxlength="7" placeholder="1010001"
+                 onKeyUp="AjaxZip3.zip2addr(this,'','oldPrefectureId','oldAddress');">
         </div>
         <div class="form-group">
           <label for="oldPrefectureId">転居元住所（都道府県）</label>
@@ -51,8 +52,9 @@
                  class="form-control">
         </div>
         <div class="form-group">
-          <label >転居先郵便番号</label>
-          <input type="text" id="newZip" name="newZip" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','newPrefectureId','newAddress');">
+          <label >転居先郵便番号（ハイフンなし）</label>
+          <input type="text" id="newZip" name="newZip" class="form-control" maxlength="7"  placeholder="0608588"
+                 onKeyUp="AjaxZip3.zip2addr(this,'','newPrefectureId','newAddress');">
         </div>
         <div class="form-group">
           <label for="newPrefectureId">転居先住所（都道府県）</label>

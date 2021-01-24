@@ -32,8 +32,8 @@ public class UserOrderDto {
 
     private boolean washingMachineInstallation;
 
-    public int getMovingMonth() {
-        return Integer.parseInt(movingMonth);
+    public String getMovingMonth() {
+        return movingMonth;
     }
 
     public void setMovingMonth(String movingMonth) {
