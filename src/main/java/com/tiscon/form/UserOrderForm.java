@@ -5,6 +5,9 @@ import com.tiscon.validator.Numeric;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -13,52 +16,56 @@ import javax.validation.constraints.NotNull;
  */
 public class UserOrderForm {
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.movingMonth.message}")
+    @Max(12)
+    @Min(1)
     private String movingMonth;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.customerName.message}")
     private String customerName;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.tel.message}")
     @Numeric
     private String tel;
 
     @Email
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.email.message}")
     private String email;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.oldZip.message}")
+    @Pattern(regexp = "^[0-9]{7}$")
     private String oldZip;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.oldPrefectureId.message}")
     private String oldPrefectureId;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.oldAddress.message}")
     private String oldAddress;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.newZip.message}")
+    @Pattern(regexp = "^[0-9]{7}$")
     private String newZip;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.newPrefectureId.message}")
     private String newPrefectureId;
 
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.newAddress.message}")
     private String newAddress;
 
     @Numeric
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.box.message}")
     private String box = "0";
 
     @Numeric
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.bed.message}")
     private String bed = "0";
 
     @Numeric
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.bicycle.message}")
     private String bicycle = "0";
 
     @Numeric
-    @NotBlank
+    @NotBlank(message="{UserOrderForm.washingMachine.message}")
     private String washingMachine = "0";
 
     @NotNull

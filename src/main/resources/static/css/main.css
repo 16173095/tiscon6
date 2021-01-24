@@ -137,7 +137,22 @@ ul.label {
 }
 
 .error-message {
-    color: #ff0000;
+    color: #b94a48;
+}
+
+.errors {
+    color: #ff7676;
+    font-size: 15px;
+    border: solid 1px #ff7676;
+    border-radius: 10px;
+    background-color: #fff0f5;
+    width: 100%;
+}
+
+.errors ul {
+    list-style: none;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .index-block{
