@@ -25,7 +25,7 @@
         <tr>
           <th style="width: 40%">引越し月</th>
           <td><span th:text="*{movingMonth}"></span></td>
-          <input type="hidden" name="movingMonth" id="movingMonth" th:value="*{movingMonth}"/>
+          <input type="hidden" name="movingMonth" id="movingMonth" th:view="*{movingMonth}"/>
         </tr>
         <tr>
           <th style="width: 40%">氏名</th>
