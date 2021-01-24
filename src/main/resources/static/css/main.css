@@ -136,23 +136,10 @@ ul.label {
     animation-play-state: paused;
 }
 
-.error-message {
-    color: #b94a48;
-}
-
-.errors {
+.text-error {
     color: #ff7676;
     font-size: 15px;
-    border: solid 1px #ff7676;
-    border-radius: 10px;
-    background-color: #fff0f5;
-    width: 100%;
-}
-
-.errors ul {
-    list-style: none;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    display:block;
 }
 
 .index-block{
