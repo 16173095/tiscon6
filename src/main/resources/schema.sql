@@ -10,9 +10,12 @@ CREATE TABLE IF NOT EXISTS CUSTOMER
     CUSTOMER_ID                     INT NOT NULL AUTO_INCREMENT,
     OLD_PREFECTURE_ID               CHAR(2) NOT NULL,
     NEW_PREFECTURE_ID               CHAR(2) NOT NULL,
+    MOVING_MONTH                    VARCHAR(2) NOT NULL,
     CUSTOMER_NAME                   VARCHAR(60) NOT NULL,
     TEL                             VARCHAR(11) NOT NULL,
     EMAIL                           VARCHAR(256) NOT NULL,
+    OLD_ZIP                         VARCHAR(8) NOT NULL,
+    NEW_ZIP                         VARCHAR(8) NOT NULL,
     OLD_ADDRESS                     VARCHAR(200) NOT NULL,
     NEW_ADDRESS                     VARCHAR(200) NOT NULL,
     PRIMARY KEY (CUSTOMER_ID)
