@@ -16,7 +16,12 @@
   <form th:action="@{/order}" th:object="${userOrderForm}" class="form-horizontal" method="post">
     <h1>概算お見積り結果</h1>
     <div class="col-sm-12">
-      <h2>概算お見積り結果は<span th:text="${price}"></span>円です。</h2>
+      <h2>概算お見積り結果は<u><span th:text="${price}"></span>(①<span th:text="${price_1}"></span>円)円</u>です。</h2>
+      <h4>お見積もりの計算方法</h4>
+      <h5>①(転居元から転居先までの距離[1kmあたり100円] + トラックの種類・台数による料金) + ②オプション料金</h5>
+      <h5>※①3,4月は1.5倍，9月は1.2倍の料金になります</h5>
+      <h5>※②は一律3000円です</h5>
+
       <h4>個人情報</h4>
       <table class="table table-bordered">
         <col span="1" style="background-color: #A9B7C7;">

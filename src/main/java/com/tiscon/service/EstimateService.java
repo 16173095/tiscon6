@@ -109,6 +109,36 @@ public class EstimateService {
         return realpricemove;
     }
 
+    public Integer getPrice_1(UserOrderDto dto) {
+        double distance = estimateDAO.getDistance(dto.getOldPrefectureId(), dto.getNewPrefectureId());
+        // 小数点以下を切り捨てる
+        int distanceInt = (int) Math.floor(distance);
+
+        // 距離当たりの料金を算出する
+        int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
+
+        int movingMonth = Integer.parseInt(dto.getMovingMonth());
+
+        // 引越月係数
+        if(movingMonth==3||movingMonth==4){N=1.5;}
+        else if(movingMonth==9){N=1.2;}
+        else{N=1.0;}
+
+        int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX)
+                + getBoxForPackage(dto.getBed(), PackageType.BED)
+                + getBoxForPackage(dto.getBicycle(), PackageType.BICYCLE)
+                + getBoxForPackage(dto.getWashingMachine(), PackageType.WASHING_MACHINE);
+
+        // 箱に応じてトラックの種類が変わり、それに応じて料金が変わるためトラック料金を算出する。
+        int pricePerTruck = estimateDAO.getPricePerTruck(boxes);
+
+        //引越見積もり計算
+        double pricemove =(priceForDistance + pricePerTruck)*N;
+        //小数点以下切り捨て
+        int realpricemove=(int)pricemove;
+        return realpricemove;
+    }
+
     /**
      * 荷物当たりの段ボール数を算出する。
      *
